@@ -29,7 +29,7 @@ Our model is trained and validated on the **CT-RATE** dataset, the largest publi
 This project requires two external components:
 
 ### 1. MGVQ (Multi-Group VQ) Autoencoder
-We use MGVQ for high-fidelity latent mapping.
+We use MGVQ for high-fidelity latent mapping. The code is adapted from [MGVQ](https://github.com/MKJia/MGVQ).
 - **Model:** `mgvq-f8c32-g8`
 - **Weight Download:** [mgvq_f8c32_g8.pt](https://huggingface.co/mkjia/MGVQ/blob/main/mgvq_f8c32_g8.pt)
 - **Storage:** Place the file in the `MGVQ/` directory.
