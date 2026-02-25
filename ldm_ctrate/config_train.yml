@@ -1,0 +1,45 @@
+experiment:
+  name: "ldm_ctrate"
+  checkpoint_dir: "checkpoints"
+  seed: 42
+  resume_from_latest: true
+  resume_path: null
+
+data:
+  json_path: "trainset.json"
+  mgvq_model_path: "../MGVQ/mgvq_f8c32_g8.pt"
+  num_workers: 4
+  shuffle: true
+
+model:
+  siglip_model_name: "google/medsiglip-448"
+  unet:
+    in_channels: 32
+    out_channels: 32
+    sample_size: 64
+    layers_per_block: 2
+    block_out_channels: [128, 256, 512, 512]
+    cross_attention_dim: 1152
+    down_block_types: 
+      - "CrossAttnDownBlock2D"
+      - "CrossAttnDownBlock2D"
+      - "CrossAttnDownBlock2D"
+      - "DownBlock2D"
+    up_block_types:
+      - "UpBlock2D"
+      - "CrossAttnUpBlock2D"
+      - "CrossAttnUpBlock2D"
+      - "CrossAttnUpBlock2D"
+
+diffusion:
+  num_train_timesteps: 1000
+  prediction_type: "epsilon"
+
+training:
+  slices_per_kernel: 4
+  num_epochs: 100
+  steps_per_epoch: 1000
+  learning_rate: 1.0e-4
+  save_interval: 1
+  device: "cuda"
+  cfg_prob: 0.2

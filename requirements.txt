@@ -1,0 +1,29 @@
+# Unified Requirements
+torch>=2.0.0
+torchvision
+torchmetrics
+numpy<2
+timm
+einops
+opencv-python
+tqdm
+scipy
+diffusers
+omegaconf
+matplotlib
+huggingface-hub
+transformers
+scikit-image
+SimpleITK
+PyYAML
+pandas
+pydicom
+clean-fid
+torch-fidelity
+# For MGVQ / EfficientViT
+torchprofile
+onnx
+onnxsim
+onnxruntime
+pycocotools
+lvis

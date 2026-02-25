@@ -1,0 +1,47 @@
+# Sampling Configuration
+model:
+  siglip_model_name: "google/medsiglip-448"
+  denoising_UNet_weight: "checkpoints/epoch_0100.pt"
+  unet:
+    in_channels: 32
+    out_channels: 32
+    sample_size: 64
+    layers_per_block: 2
+    block_out_channels: [128, 256, 512, 512]
+    cross_attention_dim: 1152 
+    down_block_types: 
+      - "CrossAttnDownBlock2D"
+      - "CrossAttnDownBlock2D"
+      - "CrossAttnDownBlock2D"
+      - "DownBlock2D"
+    up_block_types:
+      - "UpBlock2D"
+      - "CrossAttnUpBlock2D"
+      - "CrossAttnUpBlock2D"
+      - "CrossAttnUpBlock2D"
+
+data:
+  mgvq_model_path: "../MGVQ/mgvq_f8c32_g8.pt"
+  test_pairs_json: "testset.json"
+
+diffusion:
+  num_train_timesteps: 1000 
+  
+sampling:
+  total_slices: 16
+  num_inference_steps: 50
+  end_t: 999  
+  guidance_scale: 7.5
+  use_cfg: false 
+  use_neg_cfg: true 
+  
+  # Plug-and-Play Parameters
+  pnp:
+    enable: true
+    feature_injection_threshold: 1.0
+    self_attn_injection_threshold: 1.0
+    
+  # Differential Attention
+  differential_attention:
+    enable: true
+    weight: 1.1
