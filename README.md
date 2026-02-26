@@ -68,8 +68,8 @@ conversion-anywhere/
 │   ├── dataset.py       # Metadata-aware data loader
 │   ├── train.py         # LDM training entry point
 │   ├── sampling.py      # Inversion-grounded conversion script
-│   └── unet.py          # Cross-attention UNet architecture
-├── MGVQ/                # MGVQ Autoencoder (EfficientViT based)
+│   └── unet.py          # Cross-attention Denoising UNet architecture
+├── MGVQ/                # MGVQ Autoencoder
 │   └── ...              # Model and tokenizer components
 ├── requirements.txt     # Required libraries
 └── README.md            # Project documentation
