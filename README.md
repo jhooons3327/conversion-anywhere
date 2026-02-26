@@ -58,7 +58,7 @@ python ldm_ctrate/sampling.py --config ldm_ctrate/config_sampling.yml
 ```
 
 ### Advanced Sampling Options:
-- **Plug-and-Play (PnP) Injection:** Control the `pnp` threshold in the config to balance between style (kernel) change and structural preservation.
+- **Feature Injection:** Control the `pnp` threshold in the config to balance between style (kernel) change and structural preservation.
 - **Differential Attention:** Enhances the cross-attention mechanism for better metadata alignment.
 
 ## 📂 Project Structure
@@ -78,7 +78,7 @@ conversion-anywhere/
 ## 📜 Acknowledgements
 We thank the authors of the following open-source projects:
 - [CT-RATE](https://huggingface.co/datasets/ibrahimhamamci/CT-RATE) for the medical data.
-- [MGVQ / EfficientViT](https://github.com/mit-han-lab/efficientvit) for the latent space backbone.
+- [MGVQ](https://github.com/mit-han-lab/efficientvit) for the latent space backbone.
 - [MedSigLIP](https://huggingface.co/google/medsiglip-448) for the medical vision-language model.
 
 ---
