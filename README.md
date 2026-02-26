@@ -78,7 +78,7 @@ conversion-anywhere/
 ## 📜 Acknowledgements
 We thank the authors of the following open-source projects:
 - [CT-RATE](https://huggingface.co/datasets/ibrahimhamamci/CT-RATE) for the medical data.
-- [MGVQ](https://github.com/mit-han-lab/efficientvit) for the latent space backbone.
+- [MGVQ](https://github.com/MKJia/MGVQ) for the latent space backbone.
 - [MedSigLIP](https://huggingface.co/google/medsiglip-448) for the medical vision-language model.
 
 ---
